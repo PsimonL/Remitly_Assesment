@@ -107,3 +107,63 @@ form :where(input, select, button){
     border-radius: 4px;
     cursor: pointer;
 }
+form .amount{
+    font-size: 24px;
+    margin: 30px 10px 30px 10px;
+}
+form input{
+    height: 50px;
+    font-size: 17px;
+    padding: 0 15px;
+    border: 1px solid #999;
+}
+form input:focus{
+    border: 5px solid rgb(75,0,130);
+}
+form .drop-list{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 10px 30px 10px;
+}
+select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+select option {
+    background-color: #fff;
+    color: #000;
+}
+select option:checked {
+    background-color: #007bff;
+    color: #fff;
+}
+.drop-list .select-box{
+    display: flex;
+}
+
+form #exchange-button{
+    margin: 10px 10px 30px 10px;
+    font-size: 30px;
+}
+#conversion{
+    text-align: center;
+    font-weight: 600;
+    font-size: 25px;
+}
+#flag{
+    width: 40%;
+    height: 15%;
+    background-size: cover;
+    border-radius: 100%;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+}
+footer {
+    background:#A2CDFF;
+    overflow-x: hidden;
+    padding: 8vmin 15vmin;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 150%;
+}
