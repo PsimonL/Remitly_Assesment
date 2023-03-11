@@ -1,3 +1,5 @@
+// =====================================================================================================================
+// dict
 const dict = {
     "CH": "chf",
     "PL": "pln",
@@ -6,6 +8,8 @@ const dict = {
     "US": "usd"
 };
 
+// =====================================================================================================================
+// selectors for HTML elements
 const pickedCurrency1 = document.getElementById('selector1');
 const pickedCurrency2 = document.getElementById('selector2');
 const valueForInput = document.getElementById('enter');
@@ -16,6 +20,8 @@ const outputRatio = document.getElementById('conversion');
 const select1 = document.getElementById('selector1');
 const select2 = document.getElementById('selector2');
 
+// =====================================================================================================================
+// flag control
 let fromCurr = [];
 let toCurr = [];
 function controlFlag(element, flagId) {
@@ -35,3 +41,13 @@ function controlFlag(element, flagId) {
 }
 controlFlag(select1, 'flag1');
 controlFlag(select2, 'flag2');
+
+// =====================================================================================================================
+// default settings for conversion
+let curr1Val = pickedCurrency1.value;
+let curr1Name = dict[curr1Val];
+let curr2Val = pickedCurrency2.value;
+let curr2Name = dict[curr2Val];
+
+// =====================================================================================================================
+// for button
