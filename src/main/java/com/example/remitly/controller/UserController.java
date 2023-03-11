@@ -8,7 +8,7 @@ import static java.lang.invoke.VarHandle.AccessMode.GET;
 
 @Controller
 public class UserController {
-    @RequestMapping(value = "/converter")
+    @RequestMapping(value = "/")
     public String converter_page() {
         System.out.println("working");
         return "converter";

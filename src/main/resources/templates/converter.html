@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Currency Converter</title>
-  <link rel="stylesheet" href="../static/css/converter.css" />
-  <script id="load-script"
-          defer src="../static/js/converter.js">
-  </script>
+  <link rel="stylesheet" th:href="@{/css/converter.css}" />
+<!--  <script id="load-script"-->
+<!--          defer src="../static/converter.js">-->
+<!--  </script>-->
 </head>
 
 
@@ -28,7 +28,7 @@
     <div class="converter">
       <header class="header-for-converter">Currency Converter</header>
       <div id="photo-container">
-        <img id="currencies-photo" src="../static/img/currencies.png" alt="WorldMap" />
+        <img id="currencies-photo" th:src="@{/img/currencies.png}" alt="WorldMap" />
       </div>
       <form action="#">
         <div class="amount">
