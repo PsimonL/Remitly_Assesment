@@ -64,3 +64,30 @@ function getRates(currency_name) {
             console.error(error);
         });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (conversionButton) {
+        conversionButton.addEventListener('click', () => {
+            console.log('Button clicked!');
+            let fromFlag = fromCurr.slice(-1)[0];
+            let toFlag = toCurr.slice(-1)[0];
+            if (fromFlag === undefined) { fromFlag = "EU"; }
+            if(toFlag === undefined) { toFlag = "PL"; }
+
+            Promise.all([getRates(dict[fromFlag]), getRates(dict[toFlag])])
+                .then(values => {
+                    const tab = values;
+                    // console.log(`${dict[fromFlag]} = ${tab[0]}; ${dict[toFlag]} = ${tab[1]};`);
+                    // console.log(`${pickedCurrency1.value} to ${pickedCurrency2.value} = ${(tab[0] / tab[1]).toFixed(4)}`);
+                    // console.log(`Amount for ${dict[fromFlag]} to ${dict[toFlag]}: ${valueForInput.value}`);
+                    let valueForOutput = valueForInput.value * ((tab[0] / tab[1]).toFixed(2));
+                    console.log("Value for output = " + valueForOutput);
+                    outputRatio.innerHTML = `${valueForInput.value} ${dict[fromFlag]} => ${valueForOutput} ${dict[toFlag]}`
+                });
+        });
+        fromCurr.splice(0, fromCurr.length);
+        toCurr.splice(0, toCurr.length);
+    } else {
+        console.log("Button Not Working!!!");
+    }
+});
