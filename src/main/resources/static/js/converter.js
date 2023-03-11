@@ -51,3 +51,16 @@ let curr2Name = dict[curr2Val];
 
 // =====================================================================================================================
 // for button
+function getRates(currency_name) {
+    if(currency_name === "pln"){ return 1; }
+    return fetch(`http://api.nbp.pl/api/exchangerates/rates/a/${currency_name}`)
+        .then((response) => response.json())
+        .then(json_data => {
+            console.log(json_data);
+            const value_in_pln = json_data.rates[0].mid;
+            return value_in_pln;
+        })
+        .catch(error => {
+            console.error(error);
+        });
+}
